@@ -40,6 +40,8 @@ let mapleader = " "
 " Visual - Settings
 filetype plugin indent on
 set number
+set tabstop=4
+set expandtab
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_theme = 'deus_theme'
 let g:indent_guides_enable_on_vim_startup = 1
