@@ -18,6 +18,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'godlygeek/tabular'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'majutsushi/tagbar'
+Plugin 'tmux-plugins/vim-tmux'
 
 " Themes
 Plugin 'kristijanhusak/vim-hybrid-material'
@@ -42,6 +43,7 @@ filetype plugin indent on
 set number
 set tabstop=4
 set expandtab
+set t_Co=256
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_theme = 'deus_theme'
 let g:indent_guides_enable_on_vim_startup = 1
