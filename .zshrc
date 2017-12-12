@@ -20,3 +20,5 @@ alias tmux="tmux -2"
 
 export DROPBOX="~/Dropbox"
 alias dev="cd $DROPBOX/Development/$1"
+
+alias ttmux="tmux a -t"
