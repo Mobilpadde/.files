@@ -16,10 +16,13 @@ source ~/.z.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-alias tmux="tmux -2"
-
 export DROPBOX="~/Dropbox"
 alias dev="cd $DROPBOX/Development/$1"
 
+export GOPATH="$HOME/go"
+export GOBIN="$GOPATH/bin"
+
+alias tmux="tmux -2"
 alias ttmux="tmux a -t"
 alias stmux="tmux new -s"
+alias ltmux="tmux ls"
