@@ -117,6 +117,9 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeMapOpenInTab='<ENTER>'
 
+" Undo
+map <C-m> :UndotreeToggle<CR>
+
 " Custom - mappings
 nmap <F8> :TagbarToggle<CR>
 " Winteract
