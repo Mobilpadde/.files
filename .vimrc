@@ -16,17 +16,16 @@ Plugin 'neomake/neomake'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'mbbill/undotree'
-Plugin 'thinca/vim-quickrun'
 Plugin 'romgrk/winteract.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'mutewinter/nginx.vim'
 Plugin 'vitalk/vim-simple-todo'
 Plugin 'irrationalistic/vim-tasks'
+Plugin 'terryma/vim-multiple-cursors'
 
 " Visually
 Plugin 'airblade/vim-gitgutter'
-Plugin 'vim-airline/vim-airline'
 Plugin 'godlygeek/tabular'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'majutsushi/tagbar'
@@ -37,7 +36,6 @@ Plugin 'luochen1990/rainbow'
 " Themes
 Plugin 'morhetz/gruvbox'
 Plugin 'kristijanhusak/vim-hybrid-material'
-Plugin 'vim-airline/vim-airline-themes'
 
 " Languages
 Plugin 'fatih/vim-go'
@@ -54,12 +52,15 @@ Plugin 'nopik/vim-nerdtree-direnter'
 call vundle#end()
 
 " Leader
-let mapleader = " "
+let mApleader=" "
 
 set clipboard=unnamed
 set vb
-set undodir=~/.undodir/
-set undofile  
+
+if has("persistent_undo")
+        set undodir=~/.undodir/
+        set undofile
+endif
 
 " Neomake
 call neomake#configure#automake('w')
@@ -70,8 +71,7 @@ set number
 set tabstop=4
 set expandtab
 set t_Co=256
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'gruvbox'
+set scrolloff=999
 let g:indent_guides_enable_on_vim_startup = 1
 
 " Theming = Settings
@@ -118,7 +118,15 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeMapOpenInTab='<ENTER>'
 
 " Custom - mappings
-nnoremap <Leader><C-b> :QuickRun
 nmap <F8> :TagbarToggle<CR>
 " Winteract
 nmap gw :InteractiveWindow<CR>
+
+" Tabs
+noremap <S-l> gt
+noremap <S-h> gT
+
+" Quit files
+noremap <leader>q :q<CR>
+" Save files
+noremap <leader>s :w<CR>
