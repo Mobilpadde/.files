@@ -30,12 +30,12 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'godlygeek/tabular'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'majutsushi/tagbar'
-Plugin 'tmux-plugins/vim-tmux'
 Plugin 'ap/vim-css-color'
 Plugin 'gregsexton/matchtag'
 Plugin 'luochen1990/rainbow'
 
 " Themes
+Plugin 'morhetz/gruvbox'
 Plugin 'kristijanhusak/vim-hybrid-material'
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -71,12 +71,12 @@ set tabstop=4
 set expandtab
 set t_Co=256
 let g:airline#extensions#tabline#enabled = 1
-"let g:airline_theme = 'deus_theme'
+let g:airline_theme = 'gruvbox'
 let g:indent_guides_enable_on_vim_startup = 1
 
 " Theming = Settings
 set background=dark
-colorscheme hybrid_material
+colorscheme gruvbox
 
 " Go
 let g:go_disable_autoinstall = 0
@@ -96,7 +96,7 @@ let g:rainbow_active = 1
 " NEARDie - Settings
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
-let g:NERDDefaultAlign = 'left'
+let g:NERDDefaultAlign = 'right'
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 let g:NERDTreeDirArrowExpandable = '▸'
@@ -115,10 +115,10 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 
 " NEARDie - mappings
 map <C-n> :NERDTreeToggle<CR>
-" quickrun = mappings
-nnoremap <Leader><C-b> :QuickRun
+let NERDTreeMapOpenInTab='<ENTER>'
+
 " Custom - mappings
-" map <Leader><C-s> :setlocal spell! spelllang=en_us<CR>
+nnoremap <Leader><C-b> :QuickRun
 nmap <F8> :TagbarToggle<CR>
 " Winteract
 nmap gw :InteractiveWindow<CR>
