@@ -23,6 +23,7 @@ Plugin 'mutewinter/nginx.vim'
 Plugin 'vitalk/vim-simple-todo'
 Plugin 'irrationalistic/vim-tasks'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'francoiscabrol/ranger.vim'
 
 " Visually
 Plugin 'airblade/vim-gitgutter'
@@ -32,6 +33,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'ap/vim-css-color'
 Plugin 'gregsexton/matchtag'
 Plugin 'luochen1990/rainbow'
+Plugin 'dylanaraps/wal.vim'
+Plugin 'Chiel92/vim-autoformat'
 
 " Themes
 Plugin 'morhetz/gruvbox'
@@ -52,7 +55,7 @@ Plugin 'nopik/vim-nerdtree-direnter'
 call vundle#end()
 
 " Leader
-let mApleader=" "
+let mapleader=" "
 
 set clipboard=unnamed
 set vb
@@ -76,15 +79,15 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 " Theming = Settings
 set background=dark
-colorscheme gruvbox
+colorscheme wal
 
 " Go
 let g:go_disable_autoinstall = 0
 let g:go_fmt_command = "goimports"
-let g:go_highlight_functions = 1  
-let g:go_highlight_methods = 1  
-let g:go_highlight_structs = 1  
-let g:go_highlight_operators = 1  
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 " JSx
@@ -110,7 +113,7 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1	
+let g:syntastic_check_on_wq = 1
 let g:neomake_javascript_enabled_makers = ['eslint']
 
 " NEARDie - mappings
@@ -133,3 +136,5 @@ noremap <S-h> gT
 noremap <leader>q :q<CR>
 " Save files
 noremap <leader>s :w<CR>
+
+noremap <F3> :Autoformat<CR>
