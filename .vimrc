@@ -1,69 +1,72 @@
 set nocompatible
 filetype off
 
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 " Vim
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" Neovim
-" set rtp+=~/.config/nvim/bundle/Vundle.vim
-" call vundle#begin('~/.config/nvim/bundle')
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'neomake/neomake'
+Plug 'neomake/neomake'
 
 " Helpers
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'mbbill/undotree'
-Plugin 'romgrk/winteract.vim'
-Plugin 'junegunn/goyo.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'mutewinter/nginx.vim'
-Plugin 'vitalk/vim-simple-todo'
-Plugin 'irrationalistic/vim-tasks'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'francoiscabrol/ranger.vim'
-Plugin 'xojs/vim-xo'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-surround'
+Plug 'mbbill/undotree'
+Plug 'romgrk/winteract.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'scrooloose/syntastic'
+Plug 'mutewinter/nginx.vim'
+Plug 'vitalk/vim-simple-todo'
+Plug 'irrationalistic/vim-tasks'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'francoiscabrol/ranger.vim'
+Plug 'xojs/vim-xo'
 
 " Visually
-Plugin 'airblade/vim-gitgutter'
-Plugin 'godlygeek/tabular'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'majutsushi/tagbar'
-Plugin 'ap/vim-css-color'
-Plugin 'gregsexton/matchtag'
-Plugin 'luochen1990/rainbow'
-Plugin 'dylanaraps/wal.vim'
-Plugin 'Chiel92/vim-autoformat'
+Plug 'airblade/vim-gitgutter'
+Plug 'godlygeek/tabular'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'majutsushi/tagbar'
+Plug 'ap/vim-css-color'
+Plug 'gregsexton/matchtag'
+Plug 'luochen1990/rainbow'
+Plug 'Chiel92/vim-autoformat'
 
 " Themes
-Plugin 'morhetz/gruvbox'
-Plugin 'kristijanhusak/vim-hybrid-material'
+Plug 'morhetz/gruvbox'
+Plug 'kristijanhusak/vim-hybrid-material'
 
 " Languages
-Plugin 'fatih/vim-go'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
+Plug 'fatih/vim-go'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 " NEARDie
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'xuyuanp/nerdtree-git-plugin'
-Plugin 'ivalkeen/nerdtree-execute'
-Plugin 'nopik/vim-nerdtree-direnter'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'xuyuanp/nerdtree-git-plugin'
+Plug 'ivalkeen/nerdtree-execute'
+Plug 'nopik/vim-nerdtree-direnter'
 
-call vundle#end()
+call plug#end()
+
+autocmd VimEnter *
+    \ if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
+    \|  PlugInstall | q
+    \| endif
 
 " Leader
 let mapleader="\\"
 
 set clipboard=unnamed
-set vb
 
 if has("persistent_undo")
-        set undodir=~/.undodir/
-        set undofile
+    set undodir=~/.undodir/
+    set undofile
 endif
 
 " Neomake
@@ -79,13 +82,13 @@ set scrolloff=999
 let g:indent_guides_enable_on_vim_startup = 1
 set backupcopy=yes
 
-" Languages
-autocmd FileType javascript setlocal shiftwidth=4 tabstop=4 softtabstop=4
-autocmd FileType json setlocal shiftwidth=4 tabstop=4 softtabstop=4
-autocmd FileType sass setlocal shiftwidth=4 tabstop=4 softtabstop=4
+set shiftwidth=4 tabstop=4 softtabstop=4
+set backspace=indent,eol,start
 
 " Theming = Settings
-colorscheme wal
+set background=dark
+colorscheme hybrid_material
+hi Normal ctermfg=252 ctermbg=none
 
 " Go
 let g:go_disable_autoinstall = 0
