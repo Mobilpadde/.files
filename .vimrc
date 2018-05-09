@@ -38,6 +38,7 @@ Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'fatih/vim-go'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'calviken/vim-gdscript3'
 
 " NEARDie
 Plug 'scrooloose/nerdtree'
