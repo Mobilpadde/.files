@@ -24,6 +24,7 @@ Plugin 'vitalk/vim-simple-todo'
 Plugin 'irrationalistic/vim-tasks'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'francoiscabrol/ranger.vim'
+Plugin 'xojs/vim-xo'
 
 " Visually
 Plugin 'airblade/vim-gitgutter'
@@ -55,7 +56,7 @@ Plugin 'nopik/vim-nerdtree-direnter'
 call vundle#end()
 
 " Leader
-let mapleader=" "
+let mapleader="\\"
 
 set clipboard=unnamed
 set vb
@@ -70,15 +71,20 @@ call neomake#configure#automake('w')
 
 " Visual - Settings
 filetype plugin indent on
-set number
+set number relativenumber
 set tabstop=4
 set expandtab
 set t_Co=256
 set scrolloff=999
 let g:indent_guides_enable_on_vim_startup = 1
+set backupcopy=yes
+
+" Languages
+autocmd FileType javascript setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType json setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType sass setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
 " Theming = Settings
-set background=dark
 colorscheme wal
 
 " Go
@@ -110,11 +116,11 @@ let NERDTreeShowHidden = 1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+let g:syntastic_javascript_checkers = ['xo']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
-let g:neomake_javascript_enabled_makers = ['eslint']
 
 " NEARDie - mappings
 map <C-n> :NERDTreeToggle<CR>
