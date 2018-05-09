@@ -13,14 +13,12 @@ Plug 'neomake/neomake'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'mbbill/undotree'
-Plug 'romgrk/winteract.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'scrooloose/syntastic'
 Plug 'mutewinter/nginx.vim'
 Plug 'vitalk/vim-simple-todo'
 Plug 'irrationalistic/vim-tasks'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'francoiscabrol/ranger.vim'
 Plug 'xojs/vim-xo'
 
 " Visually
@@ -34,7 +32,6 @@ Plug 'luochen1990/rainbow'
 Plug 'Chiel92/vim-autoformat'
 
 " Themes
-Plug 'morhetz/gruvbox'
 Plug 'kristijanhusak/vim-hybrid-material'
 
 " Languages
@@ -70,9 +67,7 @@ endif
 call neomake#configure#automake('w')
 
 " Visual - Settings
-filetype plugin indent on
 set number relativenumber
-set tabstop=4
 set expandtab
 set t_Co=256
 set scrolloff=999
@@ -82,7 +77,7 @@ set backupcopy=yes
 set shiftwidth=4 tabstop=4 softtabstop=4
 set backspace=indent,eol,start
 
-" Theming = Settings
+" Theming - Settings
 set background=dark
 colorscheme hybrid_material
 hi Normal ctermfg=252 ctermbg=none
@@ -131,8 +126,6 @@ map <C-m> :UndotreeToggle<CR>
 
 " Custom - mappings
 nmap <F8> :TagbarToggle<CR>
-" Winteract
-nmap gw :InteractiveWindow<CR>
 
 " Tabs
 noremap <S-l> gt
