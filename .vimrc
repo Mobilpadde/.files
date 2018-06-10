@@ -30,6 +30,7 @@ Plug 'ap/vim-css-color'
 Plug 'gregsexton/matchtag'
 Plug 'luochen1990/rainbow'
 Plug 'Chiel92/vim-autoformat'
+Plug 'mhinz/vim-startify'
 
 " Themes
 Plug 'kristijanhusak/vim-hybrid-material'
@@ -39,6 +40,7 @@ Plug 'fatih/vim-go'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'calviken/vim-gdscript3'
+Plug 'sophacles/vim-processing'
 
 " NEARDie
 Plug 'scrooloose/nerdtree'
@@ -68,7 +70,7 @@ endif
 call neomake#configure#automake('w')
 
 " Visual - Settings
-set number relativenumber
+set number relativenumber cursorline
 set expandtab
 set t_Co=256
 set scrolloff=999
