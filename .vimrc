@@ -20,6 +20,7 @@ Plug 'vitalk/vim-simple-todo'
 Plug 'irrationalistic/vim-tasks'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'xojs/vim-xo'
+Plug 'kshenoy/vim-signature'
 
 " Visually
 Plug 'airblade/vim-gitgutter'
@@ -129,14 +130,5 @@ map <C-m> :UndotreeToggle<CR>
 
 " Custom - mappings
 nmap <F8> :TagbarToggle<CR>
-
-" Tabs
-noremap <S-l> gt
-noremap <S-h> gT
-
-" Quit files
-noremap <leader>q :q<CR>
-" Save files
-noremap <leader>s :w<CR>
 
 noremap <F3> :Autoformat<CR>
